@@ -20,7 +20,7 @@ Softmax, her sunucunun geçmişteki performansına (Q-değerleri) dayanarak olas
 * **Softmax:** Zamanla değişen sunucu performanslarını öğrenir ve yükü en hızlı yanıt veren sunuculara yönlendirerek toplam gecikmeyi düşürür.
 
 ### Teknik Zorluk: Nümerik Stabilite (Numerical Stability)
-Üstel fonksiyon ($e^x$) hesaplamalarında, Q değerleri büyüdüğünde Java'daki `Math.exp()` fonksiyonu `Infinity` (sonsuz) hatası verebilir. Bu problem, her bir Q değerinden o anki maksimum Q değerinin çıkarılması ($Q - \max(Q)$) yöntemiyle çözülmüş ve sistemin kararlı çalışması sağlanmıştır.
+Üstel fonksiyon ($e^x$) hesaplamalarında, Q değerleri büyüdüğünde Java'daki `Math.exp()` fonksiyonu `Infinity` (sonsuz) hatası verebilir. Bu problem, her bir Q değerinden o anki maksimum Q değerinin çıkarılması ($Q - \max(Q)$) yöntemiyle çözülmüş ve sistemin kararlı çalışması sağlanmıştır.  $$Softmax(Q_i) = \frac{e^{(Q_i - \max(Q))/\tau}}{\sum e^{(Q_j - \max(Q))/\tau}}$$
 
 ## 📊 Çalışma Zamanı Analizi (Sonuçlar)
 2000 istek üzerinden yapılan simülasyon sonuçları aşağıdadır:
